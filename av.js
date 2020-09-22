@@ -8,7 +8,8 @@
 	var width = canvas.width,
 	height = canvas.height;
 
-	var audio = new Audio("hello.mp4");
+	var audio = new Audio("https://music.qmcmc.cn/stream.mp3");
+	audio.crossOrigin = "anonymous";
 
 	audio.oncanplaythrough = function() {
 		if(screenWidth!=width || screenHeight!=height){
@@ -180,7 +181,7 @@
 		}, 160000);
 		
 		//音乐结束，OMFG收缩
-		setTimeout(function() {
+		/*setTimeout(function() {
 			o.classList.add('zoomToZero');
 			oval.classList.add('zoomToZero');
 		}, 228000);
@@ -207,7 +208,7 @@
 			github.style.display ='block';
 			replay.classList.remove('hidden');
 			github.classList.remove('hidden');
-		}, 235000);
+		}, 235000);*/
 
 	  //辐射层透明，这样才能显示后面的频谱
 	  penBg.globalAlpha = 0.2;
