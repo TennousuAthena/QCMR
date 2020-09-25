@@ -7,10 +7,10 @@ if($nowQueue->count == 0){
     echo "QAQ \n";
 }
 function addQueue(){
-    send_post(API_URL . "/api/queue/items/add?expression=path+starts+with+%22%2F%22+order+by+path+asc&shuffle=false&clear=true&playback=start");
+    send_post(API_URL . "/api/queue/items/add?expression=path+starts+with+%22%2F%22+order+by+path+asc&shuffle=true&clear=false&playback=start");
 }
 
-function send_post($url, $post_data="k=v;") {
+function send_post($url, $post_data=["k"=>"v"]) {
  
     $postdata = http_build_query($post_data);
     $options = array(
