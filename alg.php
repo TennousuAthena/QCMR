@@ -3,7 +3,8 @@ DEFINE("API_URL", "");
 
 $nowQueue = json_decode(file_get_contents(API_URL . "/api/queue"));
 if($nowQueue->count == 0){
-
+    addQueue();
+    echo "QAQ \n";
 }
 function addQueue(){
     send_post(API_URL . "/api/queue/items/add?expression=path+starts+with+%22%2F%22+order+by+path+asc&shuffle=false&clear=true&playback=start");
@@ -25,3 +26,5 @@ function send_post($url, $post_data="k=v;") {
  
     return $result;
 }
+
+echo "Done! \n";
